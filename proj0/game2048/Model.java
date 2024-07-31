@@ -178,6 +178,25 @@ public class Model extends Observable {
      */
     public static boolean atLeastOneMoveExists(Board b) {
         // TODO: Fill in this function.
+        if (emptySpaceExists(b)) {
+            return true;
+        }
+        for (int col = 0; col < b.size(); col +=1) {
+            for (int row = 0; row < b.size(); row += 1) {
+                if (col - 1 >= 0 && b.tile(col, row).value() == b.tile(col - 1, row).value()) {
+                    return true;
+                }
+                if (col + 1 < b.size() && b.tile(col, row).value() == b.tile(col + 1, row).value()) {
+                    return true;
+                }
+                if (row - 1 >= 0 && b.tile(col, row).value() == b.tile(col, row - 1).value()) {
+                    return true;
+                }
+                if (row + 1 < b.size() && b.tile(col, row).value() == b.tile(col, row + 1).value()) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
