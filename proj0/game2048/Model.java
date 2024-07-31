@@ -110,16 +110,56 @@ public class Model extends Observable {
         boolean changed;
         changed = false;
 
+
         // TODO: Modify this.board (and perhaps this.score) to account
         // for the tilt to the Side SIDE. If the board changed, set the
         // changed local variable to true.
+        board.setViewingPerspective(side);
 
+        boolean[][] isLocked = new boolean[size()][size()];
+        for (int col = 0; col < size(); col += 1) {
+            for (int row = 0; row < size(); row += 1) {
+                isLocked[col][row] = false;
+            }
+        }
+        for (int col = 0; col < size(); col += 1) {
+            for (int row = 3; row >= 0; row -= 1) {
+                Tile t = board.tile(col, row);
+                if (t == null) {
+                    continue;
+                }
+                int cnt = 0;
+                for (int r = row + 1; r <= 3; r += 1) {
+                    if (board.tile(col, r) == null) {
+                        cnt += 1;
+                        continue;
+                    }
+                    if (board.tile(col, r).value() == t.value() && !isLocked[col][r]) {
+                        board.move(col, r, t);
+                        score += board.tile(col, r).value();
+                        isLocked[col][r] = true;
+                        cnt = 0;
+                        changed = true;
+                        break;
+                    }
+                }
+                if (cnt != 0) {
+                    board.move(col, row + cnt, t);
+                    changed = true;
+                }
+            }
+
+        }
+
+
+        board.setViewingPerspective(Side.NORTH);
         checkGameOver();
         if (changed) {
             setChanged();
         }
         return changed;
     }
+
 
     /** Checks if the game is over and sets the gameOver variable
      *  appropriately.
