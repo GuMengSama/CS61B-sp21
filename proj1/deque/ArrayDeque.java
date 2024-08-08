@@ -23,6 +23,9 @@ public class ArrayDeque<T> {
         return size == 0;
     }
 
+    public int size() {
+        return size;
+    }
     public void addFirst(T item) {
         if (size == arraySize) {
             resize(arraySize * 2);
