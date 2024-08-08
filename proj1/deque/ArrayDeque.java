@@ -115,33 +115,11 @@ public class ArrayDeque<T> {
         return theFirst;
     }
 
-    public static void main(String[] args) {
-        ArrayDeque<Integer> L = new ArrayDeque<>();
-        L.addFirst(1);
-        L.addFirst(2);
-        L.addFirst(3);
-        L.addFirst(4);
-        L.addFirst(5);
-        L.addLast(6);
-        L.removeFirst();
-        L.removeFirst();
-        L.removeLast();
-        L.addLast(7);
-        L.addLast(8);
-        L.printDeque();
-        L.addFirst(0);
-        L.addLast(9);
-        L.printDeque();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-        L.removeLast();
-
-
+    public T get(int index) {
+        if (index >= size) {
+            return null;
+        }
+        return items[arrayIndex(index)];
     }
+
 }
