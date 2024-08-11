@@ -14,7 +14,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
         /**
          * Creates a TNode
          */
-        public TNode(T item, TNode prev, TNode next) {
+        TNode(T item, TNode prev, TNode next) {
             this.item = item;
             this.prev = prev;
             this.next = next;
@@ -126,7 +126,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     private class LinkedListDequeIterator implements Iterator<T> {
         TNode pointerPos;
 
-        public LinkedListDequeIterator() {
+        LinkedListDequeIterator() {
             pointerPos = sentinal.next;
         }
 

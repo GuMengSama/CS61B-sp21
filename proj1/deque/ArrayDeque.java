@@ -127,7 +127,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     private class ArrayDequeIterator implements Iterator<T> {
         int pointerPoz;
 
-        public ArrayDequeIterator() {
+        ArrayDequeIterator() {
             pointerPoz = 0;
         }
 
