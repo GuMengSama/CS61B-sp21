@@ -1,6 +1,9 @@
 package deque;
 
-public class LinkedListDeque<T> {
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     private int size;
     private TNode sentinal;
 
@@ -23,17 +26,12 @@ public class LinkedListDeque<T> {
      * Creates an empty LinkedListDeque
      */
     public LinkedListDeque() {
+        size = 0;
         sentinal = new TNode(null, null, null);
         sentinal.prev = sentinal;
         sentinal.next = sentinal;
     }
 
-    /**
-     * If the LinkedListDeque is empty, return true , else false
-     */
-    public boolean isEmpty() {
-        return sentinal.next == sentinal;
-    }
 
     /**
      * Return the size of the LinkedListDeque
@@ -126,4 +124,46 @@ public class LinkedListDeque<T> {
         return getRecursiveHelper(node.next, index - 1);
     }
 
+    private class LinkedListDequeIterator implements Iterator<T> {
+        TNode pointerPos;
+
+        public LinkedListDequeIterator() {
+            pointerPos = sentinal.next;
+        }
+
+        public boolean hasNext() {
+            return pointerPos != sentinal;
+        }
+
+        public T next() {
+            T result = pointerPos.item;
+            pointerPos = pointerPos.next;
+            return result;
+        }
+    }
+
+    public Iterator<T> iterator() {
+        return new LinkedListDequeIterator();
+    }
+
+    public boolean equals(Object o) {
+        if (!(o instanceof LinkedListDeque)) {
+            return false;
+        }
+        if (size() != ((LinkedListDeque<T>)o).size()) {
+            return false;
+        }
+        for (int i = 0; i < size; i += 1) {
+            if (get(i) != ((LinkedListDeque<T>)o).get(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        LinkedListDeque<Integer> L = new LinkedListDeque<>();
+        LinkedListDeque<String> LL = new LinkedListDeque<>();
+        System.out.println(L.equals(LL));
+    }
 }
