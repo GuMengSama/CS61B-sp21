@@ -8,7 +8,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     private int nextLast;
     private int size;
     private int arraySize;
-    T[] items;
+    private T[] items;
 
     /**
      * Creates an empty ArrayDeque
@@ -24,6 +24,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     public int size() {
         return size;
     }
+
     public void addFirst(T item) {
         if (size == arraySize) {
             resize(arraySize * 2);
@@ -54,7 +55,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
 
     private void resize(int capacity) {
         T[] newItems = (T[]) new Object[capacity];
-        for (int i = 0; i < size; i +=1) {
+        for (int i = 0; i < size; i += 1) {
             newItems[i + capacity / 4] = items[arrayIndex(i)];
         }
         items = newItems;
@@ -82,7 +83,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
         if (isEmpty()) {
             return null;
         }
-        if (arraySize >= 16 && (size - 1) / (double)arraySize < 0.25) {
+        if (arraySize >= 16 && (size - 1) / (double) arraySize < 0.25) {
             resize(arraySize / 2);
         }
         nextLast = nextLast - 1;
@@ -99,7 +100,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
         if (isEmpty()) {
             return null;
         }
-        if (arraySize >= 16 && (size - 1) / (double)arraySize < 0.25) {
+        if (arraySize >= 16 && (size - 1) / (double) arraySize < 0.25) {
             resize(arraySize / 2);
         }
         nextFirst = nextFirst + 1;
@@ -147,14 +148,16 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     public boolean equals(Object o) {
-        if (!(o instanceof ArrayDeque)) {
+        if (!(o instanceof Deque)) {
             return false;
         }
-        if (size() != ((ArrayDeque<T>) o).size()) {
+        if (size() != ((Deque<T>) o).size()) {
             return false;
         }
         for (int i = 0; i < size; i += 1) {
-            if (get(i) != ((ArrayDeque<T>) o).get(i)) {
+            T x = get(i);
+            T y = ((Deque<T>) o).get(i);
+            if (!x.equals(y)) {
                 return false;
             }
         }
