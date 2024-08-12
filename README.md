@@ -13,6 +13,8 @@ Spring 2021
 - [x] Lab 2: JUnit Tests and Debugging
 - [x] Lab 3: Timing Tests and Randomized Comparison Tests
 - [x] Project 1: Data Structures
+- [x] Project 1 Extra Credit: Autograding
+
 ## Autograder Score
 | Assignment              | Score           |
 |-------------------------|-----------------|
@@ -22,3 +24,4 @@ Spring 2021
 | Lab 3: Randomized Testing and Timing   | **64 / 64 pts**|
 | Project 1: Checkpoint   | **16 / 16 pts**|
 | Project 1: Data Structures   | **640 / 640 pts**|
+| Project 1: Data Structures EC   | **32 / 32 pts**|
