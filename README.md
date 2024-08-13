@@ -14,6 +14,8 @@ Spring 2021
 - [x] Lab 3: Timing Tests and Randomized Comparison Tests
 - [x] Project 1: Data Structures
 - [x] Project 1 Extra Credit: Autograding
+- [x] Lab 4A: Git Exercise Part A
+- [x] Lab 4B: Git Exercise Part B
 
 ## Autograder Score
 | Assignment              | Score           |
@@ -25,3 +27,6 @@ Spring 2021
 | Project 1: Checkpoint   | **16 / 16 pts**|
 | Project 1: Data Structures   | **640 / 640 pts**|
 | Project 1: Data Structures EC   | **32 / 32 pts**|
+| Lab 4A: Git Exercise Part A   | **16 / 16 pts**|
+| Lab 4B: Git Exercise Part B   | **16 / 16 pts**|
+
