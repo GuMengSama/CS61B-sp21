@@ -16,6 +16,9 @@ Spring 2021
 - [x] Project 1 Extra Credit: Autograding
 - [x] Lab 4A: Git Exercise Part A
 - [x] Lab 4B: Git Exercise Part B
+- [x] Lab 4B: Git Exercise Part B
+- [x] Lab 4: Debugging
+
 
 ## Autograder Score
 | Assignment              | Score           |
@@ -29,4 +32,4 @@ Spring 2021
 | Project 1: Data Structures EC   | **32 / 32 pts**|
 | Lab 4A: Git Exercise Part A   | **16 / 16 pts**|
 | Lab 4B: Git Exercise Part B   | **16 / 16 pts**|
-
+| Lab 4: Debugging   | **32 / 32 pts**|
