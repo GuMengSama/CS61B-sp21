@@ -35,7 +35,9 @@ public class CapersRepository {
         dogsFolder.mkdir();
 
         File storyFile = join(CAPERS_FOLDER, "story");
-        writeContents(storyFile,"");
+        if (!storyFile.exists()) {
+            writeContents(storyFile,"");
+        }
     }
 
     /**
@@ -44,8 +46,11 @@ public class CapersRepository {
      * @param text String of the text to be appended to the story
      */
     public static void writeStory(String text) {
-
-        
+        File storyFile = join(CAPERS_FOLDER, "story");
+        String formerContent = readContentsAsString(storyFile);
+        String content = formerContent + text + "\n";
+        System.out.print(content);
+        writeContents(storyFile, content);
     }
 
     /**
