@@ -3,9 +3,10 @@ package capers;
 import java.io.File;
 
 import static capers.Utils.*;
+import java.util.Arrays;
 
 /** Canine Capers: A Gitlet Prelude.
- * @author TODO
+ * @author GuMengSama
 */
 public class Main {
     /**
@@ -40,7 +41,7 @@ public class Main {
         if (args.length == 0) {
             Utils.exitWithError("Must have at least one argument");
         }
-
+        System.out.println("args: " + Arrays.toString(args));
         CapersRepository.setupPersistence();
         String text;
         switch (args[0]) {
