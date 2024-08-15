@@ -18,6 +18,7 @@ Spring 2021
 - [x] Lab 4B: Git Exercise Part B
 - [x] Lab 4B: Git Exercise Part B
 - [x] Lab 4: Debugging
+- [x] Lab 6: Getting Started on Project 2
 
 
 ## Autograder Score
@@ -33,3 +34,4 @@ Spring 2021
 | Lab 4A: Git Exercise Part A   | **16 / 16 pts**|
 | Lab 4B: Git Exercise Part B   | **16 / 16 pts**|
 | Lab 4: Debugging   | **32 / 32 pts**|
+| Lab 6: Getting Started on Project 2   | **64 / 64 pts**|
