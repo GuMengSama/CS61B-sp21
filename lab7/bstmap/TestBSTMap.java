@@ -49,7 +49,7 @@ public class TestBSTMap {
     @Test
     public void sanityGetTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
-        assertEquals(null,b.get("starChild"));
+        assertEquals(null, b.get("starChild"));
         assertEquals(0, b.size());
         b.put("starChild", 5);
         assertTrue(((Integer) b.get("starChild")).equals(5));
